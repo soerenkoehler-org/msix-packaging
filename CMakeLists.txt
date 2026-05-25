@@ -12,7 +12,7 @@ message(STATUS "--------------------------------")
 message(STATUS "CMake version: ${CMAKE_VERSION}")
 
 # specify that this binary is to be built with C++14
-set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -148,7 +148,7 @@ if((MACOS) OR (IOS))
         # The "dsymutil" program will create the dSYM dir for us.
         # Strangely it takes in the executable and not the object
         # files even though it's the latter that contain the debug info.
-        # Thus it will only work if the object files are still sitting around.        
+        # Thus it will only work if the object files are still sitting around.
         find_program(DSYMUTIL_PROGRAM dsymutil)
         if (DSYMUTIL_PROGRAM)
         set(CMAKE_C_LINK_EXECUTABLE
